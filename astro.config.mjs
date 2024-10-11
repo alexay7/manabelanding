@@ -9,6 +9,7 @@ import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
 export default defineConfig({
+    site:"https://manabe.es",
     vite:{
         plugins:[
             svgr({
