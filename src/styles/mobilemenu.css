@@ -1,0 +1,52 @@
+/* CSS Transition classes */
+.sidemenu-enter {
+  top: 100%;
+}
+
+.sidemenu-enter-active {
+  top: 50%;
+  /* FIGMA'S GENTLE ALIKE CUBIC-BEZIER (SMALL BOUNCE)*/
+  transition: top 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.sidemenu-enter-done {
+  top: 50%;
+}
+
+.sidemenu-exit {
+  top: 50%;
+}
+
+.sidemenu-exit-active {
+  top: 100%;
+  /* FIGMA'S GENTLE ALIKE CUBIC-BEZIER (SMALL BOUNCE)*/
+  transition: top 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  opacity: 0;
+}
+
+.sidemenu-exit-done {
+  top: 100%;
+  opacity: 0;
+}
+
+.sidemenubackdrop-enter {
+  opacity: 0;
+}
+
+.sidemenubackdrop-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.sidemenubackdrop-enter-done {
+  opacity: 1;
+}
+
+.sidemenubackdrop-exit {
+  opacity: 1;
+}
+
+.sidemenubackdrop-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s;
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Kelsi";
+  src: url("/fonts/Kelsi-fill.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "YasashisaAntique";
+  src: url("/fonts/YasashisaAntique.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #00c189;
+}
+
+.fuentetowapa {
+  font-family: "Kelsi", sans-serif;
+  background-image: linear-gradient(90deg, var(--primary-color) 19%, #82ccf0 61%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-synthesis-weight: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 999px;
+}

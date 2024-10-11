@@ -1,0 +1,442 @@
+---
+import "@fontsource/roboto";
+import "../styles/global.css";
+
+import MobileMenu from "../components/MobileMenu.tsx";
+import { links } from "../resources/links.ts";
+
+import bg from "../assets/bg.svg";
+import { Image } from "astro:assets";
+import manabeLogo from "../assets/logo.svg";
+import example1 from "../assets/example1.webp";
+import example2 from "../assets/example2.webp";
+import example3 from "../assets/example3.webp";
+import yomitan from "../assets/yomitan.webp";
+
+import DiscordLogo from "../assets/discord.svg?react";
+import Triangle from "../assets/triangle.svg?react";
+import Circle from "../assets/circle.svg?react";
+import Rectangle from "../assets/rectangle.svg?react";
+import Youtube from "../assets/youtube.svg";
+import Instagram from "../assets/instagram.svg";
+import Tiktok from "../assets/tiktok.svg";
+import Smiley from "../assets/smiley.svg?react";
+import Files from "../assets/files.svg?react";
+import Members from "../assets/users.svg?react";
+import MiniLogo from "../assets/minilogo.svg?react";
+import Home from "../assets/home.svg?react";
+import BurgerMenu from "../assets/burgermenu.svg?react";
+
+// Métricas
+const communityMetrics = [
+  {
+    number: 600,
+    description: "Visitas mensuales",
+    icon: Smiley,
+  },
+  {
+    number: 50000,
+    description: "Mensajes mensuales",
+    icon: Files,
+  },
+  {
+    number: 800,
+    description: "Miembros",
+    icon: Members,
+  },
+];
+
+// Redes
+const redes = [
+  {
+    name: "youtube",
+    Icon: Youtube,
+    url: "https://www.youtube.com/@veri_manabe",
+  },
+  {
+    name: "instagram",
+    Icon: Instagram,
+    url: "https://www.instagram.com/veri_manabe",
+  },
+  {
+    name: "tiktok",
+    Icon: Tiktok,
+    url: "https://www.tiktok.com/@veri_manabe",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Manabe.es" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Manabe" />
+    <link rel="canonical" href="https://manabe.es" />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Manabe</title>
+
+    <!-- Add keywords -->
+    <meta
+      name="keywords"
+      content="aprende japonés online, clases de japonés para hispanohablantes, inmersión en japonés, curso de japonés desde cero, estudiar japonés online, vocabulario en japonés, diccionario japonés español, gramática japonesa, kanji japonés, lecciones de japonés gratuitas, curso de japonés para principiantes, aprender japonés con inmersión, manabe japonés, estudiar japonés con nativos, escuela de japonés online"
+    />
+
+    <!-- Main color -->
+    <meta name="theme-color" content="#000" />
+
+    <!-- Add description -->
+    <meta name="description" content="Manabe es una comunidad de personas que aprenden japonés de forma autodidacta." />
+
+    <!-- Add Open Graph tags -->
+    <meta property="og:url" content="https://manabe.es" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Manabe" />
+    <meta
+      property="og:description"
+      content="Manabe es una comunidad de personas que aprenden japonés de forma autodidacta."
+    />
+    <meta property="og:image" content="https://manabe.es/banner.png" />
+
+    <!-- Add Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Manabe" />
+    <meta
+      name="twitter:description"
+      content="Manabe es una comunidad de personas que aprenden japonés de forma autodidacta."
+    />
+    <meta name="twitter:image" content="https://manabe.es/banner.png" />
+  </head>
+  <body
+    style={{
+      background: `url(${bg.src})`,
+      "background-color": "#000",
+    }}
+    class="text-white"
+  >
+    <!-- MENÚ DE MÓVIL -->
+    <div class="fixed bottom-0 md:hidden flex flex-col z-30 left-1/2 -translate-x-1/2 items-center">
+      <div
+        class="flex justify-between w-[max(95%,300px)] bg-white/5 backdrop-blur-lg px-4 py-2 rounded-2xl items-center"
+      >
+        <div class="text-primary">
+          <a href="#top" aria-label="Manabe">
+            <MiniLogo />
+          </a>
+        </div>
+        <div class="/">
+          <a href="/" aria-label="Inicio">
+            <Home />
+          </a>
+        </div>
+        <div class="">
+          <MobileMenu client:only="react">
+            <BurgerMenu slot="fallback" />
+          </MobileMenu>
+        </div>
+      </div>
+      <div class="h-4"></div>
+    </div>
+    <div class="items-center relative flex flex-col gap-20 w-full overflow-hidden">
+      <main class="px-8 md:max-w-screen-lg w-full h-screen" id="top">
+        <div
+          class="blur-[192px] w-[1000px] h-[1100px] -rotate-45 absolute -top-1/3 -right-[200px] -z-10"
+          style={{
+            background:
+              "conic-gradient(#0A0C10 0%, #000000 19%, rgba(0, 193, 137, 0.6) 51%, #AFDAB8 54%, rgba(65, 107, 159, 0.53) 75%)",
+          }}
+        >
+        </div>
+
+        <div class="flex flex-col gap-4 py-[27px]">
+          <!-- SOLO VISIBLE EN PC -->
+          <header
+            class="hidden md:flex justify-between items-center dark:bg-white/5 border-white/[0.13] border border-solid h-[74px] rounded-2xl px-4 w-full max-w-screen-lg"
+          >
+            <a href="/" aria-label="Inicio">
+              <Image loading="eager" src={manabeLogo} alt="Logo de manabe" />
+            </a>
+
+            <nav class="flex space-x-4 text-desktop-h6 font-general">
+              {
+                links.map((l) => (
+                  <a
+                    href={l.url}
+                    target={l.external ? "_blank" : "_self"}
+                    referrerpolicy="no-referrer"
+                    class="flex gap-2"
+                  >
+                    {l.name}
+                    {l.icon && <l.icon />}
+                  </a>
+                ))
+              }
+            </nav>
+
+            <div class="flex gap-4 font-kelsi">
+              <a href="https://discord.gg/y8P7mpDTcB" target="_blank" referrerpolicy="no-referrer" aria-label="Discord">
+                <DiscordLogo className="text-primary" />
+              </a>
+              <a
+                class="bg-primary text-white px-5 py-2 rounded-xl text-caption font-kelsi"
+                href="https://guia.manabe.es">Empezar</a
+              >
+            </div>
+          </header>
+          <div id="top" class="flex md:flex-row flex-col gap-20 md:gap-2 w-full mt-[40px] md:mt-[60px] 2xl:mt-[100px]">
+            <div class="md:w-[calc(55%-0rem)]">
+              <h1
+                class="text-[42px] md:text-desktop-sm font-roboto font-bold md:leading-[91px] text-center md:text-left"
+              >
+                Tu portal hacia <br /> la <span class="fuentetowapa">FLUIDEZ</span>
+              </h1>
+              <h3
+                class="text-mobile-h3 md:text-desktop-h3 font-thin text-[#CACACA] font-general text-center md:text-left"
+              >
+                Tus primeros 30 días aprendiendo japonés
+              </h3>
+              <div class="mt-2 flex justify-center md:justify-start">
+                <a
+                  class="bg-primary text-white px-5 py-2 rounded-xl text-caption font-kelsi"
+                  href="https://guia.manabe.es">Empezar</a
+                >
+              </div>
+            </div>
+
+            <div class="flex md:w-[45%]">
+              <div class="w-full bg-primary rounded-lg">
+                <Image
+                  class="w-full h-full -translate-x-2 -translate-y-2"
+                  loading="eager"
+                  src={example2}
+                  alt="Hombre inmersando"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden md:flex gap-4 justify-end">
+            <div class="bg-primary rounded-lg w-[300px]">
+              <Image
+                class="w-full h-full -translate-x-2 -translate-y-2"
+                loading="eager"
+                src={example1}
+                alt="Mujeres japonesas"
+              />
+            </div>
+            <div class="bg-primary rounded-lg w-[250px] h-[160px] mt-4">
+              <Image
+                class="w-full h-full -translate-x-2 -translate-y-2"
+                loading="eager"
+                src={example3}
+                alt="Castillo japonés"
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <section class="px-8 md:max-w-screen-lg relative w-full">
+        <Triangle className="text-primary absolute -top-[120px] -right-[91px] -z-10" />
+        <div
+          class="bg-white/5 flex flex-col justify-center font-roboto items-center flex-grow backdrop-blur-lg border border-white/15 rounded-2xl p-[30px] md:p-[60px]"
+        >
+          <div class="flex items-center gap-2 flex-col md:flex-row">
+            <h2 class="text-mobile-h2 md:text-desktop-h2 font-bold text-center md:text-left">
+              Únete a nuestra comunidad
+            </h2>
+            <a href="https://discord.gg/y8P7mpDTcB" target="_blank" referrerpolicy="no-referrer" aria-label="Discord">
+              <DiscordLogo className="text-primary" />
+            </a>
+          </div>
+          <hr class="w-full my-6" />
+          <p class="text-body text-center">
+            El camino hacia la fluidez se basa en un montón de horas disfrutando del contenido en japonés. En el
+            servidor de Discord de Manabe encontrarás a muchísimas personas en la misma situación que tú, a las que
+            podrás preguntar cualquier duda que tengas. Contamos con clubes donde se vota cada mes series, libros,
+            mangas, animes y videojuegos, donde podrás comentar junto al resto de integrantes del club. Contamos además
+            con una competición para ver quién inmersa más. ¿Crees que puedes ganar?
+          </p>
+          <figure class="mb-4"></figure>
+          <ul class="flex gap-6 w-full flex-col md:flex-row">
+            {
+              communityMetrics.map((m) => (
+                <li class="md:w-[calc(33%-0.5rem)] h-[80px] flex flex-row items-center gap-4 p-4 bg-white/5 border border-white rounded-lg">
+                  <div class="text-gray-400">
+                    <m.icon />
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="text-mobile-h4 md:text-desktop-h4 font-bold leading-tight tabular-nums metric">
+                      {m.number}
+                    </h4>
+                    <p class="text-body text-[#697077]">{m.description}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <Circle className="text-primary absolute -bottom-[130px] -left-[150px] -z-10" />
+      </section>
+
+      <section class="relative from-black/0 via-black/0 to-white/10 bg-gradient-to-b w-full flex justify-center pb-32">
+        <div class="px-8 md:max-w-screen-lg relative w-full flex flex-col items-center md:px-11 font-roboto">
+          <h2 class="text-mobile-h2 md:text-desktop-h2 font-bold text-center md:text-left">
+            Nunca te enseñaron a aprender <span class="fuentetowapa">IDIOMAS</span>
+          </h2>
+          <p class="text-center text-[18px]">
+            Y lo mejor es que estás a punto de cambiarlo. <br /> Te invito a ver el siguiente vídeo sobre cómo conseguí entender
+            todo el contenido que me gustaba en inglés a los 18, y cómo me saqué el N1 (el nivel más alto en japonés) en
+            algo menos de 2 años.
+          </p>
+          <div class="flex w-full mt-14">
+            <div class="w-full h-[240px] md:h-[580px] bg-primary rounded-lg relative">
+              <iframe
+                class="w-full rounded-b-lg -translate-x-4 -translate-y-4 h-[240px] md:h-[580px] mt-8 md:mt-16"
+                src="https://www.youtube-nocookie.com/embed/SQh4OmDdtRU?enablejsapi=1"
+                title="Vídeo Manabe"
+                loading="lazy"
+              >
+              </iframe>
+              <div
+                class="bg-white absolute top-0 h-8 md:h-16 rounded-t-lg left-0 z-10- w-full -translate-x-4 -translate-y-4"
+              >
+                <div class="relative w-full h-full">
+                  <div class="absolute top-0 left-0 flex h-full items-center p-4 gap-2">
+                    <div class="w-3 h-3 md:w-4 md:h-4 bg-gray-200 rounded-full"></div>
+                    <div class="w-3 h-3 md:w-4 md:h-4 bg-gray-200 rounded-full"></div>
+                    <div class="w-3 h-3 md:w-4 md:h-4 bg-gray-200 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="overflow-hidden">
+      <section class="relative w-full flex flex-col items-center">
+        <div
+          class="px-8 md:max-w-screen-lg relative w-full flex flex-col items-center md:px-11 font-roboto gap-[60px] py-[60px] mt-[60px]"
+        >
+          <h2 class="text-mobile-h2 md:text-desktop-h2 font-bold text-center">
+            Te guiamos en todo el camino de tu <span class="fuentetowapa">INMERSION</span>
+          </h2>
+          <div class="relative">
+            <Circle className="text-primary absolute top-[20px] -left-[220px] -z-10" />
+            <div
+              class="bg-white/5 flex flex-col md:flex-row justify-center font-roboto items-center flex-grow backdrop-blur-lg border border-white/15 rounded-2xl md:p-[60px] p-[30px] md:gap-10 gap-4"
+            >
+              <div class="flex-grow">
+                <Image src={yomitan} alt="Yomitan" />
+              </div>
+              <div class="flex flex-col font-general text-[18px] md:w-[calc(60%-20px)]">
+                <p class="font-bold">Yomitan</p>
+                <p class="">
+                  Yomitan es una extensión de nuestro navegador que nos permitirá acceder a la definición de un palabra
+                  en japonés pulsando shift y poniendo el ratón encima de esta, nos sacará un desplegable con la entrada
+                  del diccionario y el significado de la palabra. Útil y bastante personalizable, además de necesario
+                  para nuestro futuro
+                </p>
+              </div>
+            </div>
+            <Rectangle
+              className="text-primary absolute -bottom-[25%] -right-[220px] -z-10 -rotate-12 overflow-hidden"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="bg-white/5 backdrop-blur-lg py-12 flex flex-col gap-12 items-center">
+      <div class="px-8 md:max-w-screen-lg w-full flex justify-center md:justify-start">
+        <a class="contents" href="#top" aria-label="Inicio">
+          <Image src={manabeLogo} alt="Logo de manabe" />
+        </a>
+      </div>
+      <hr class="border-white w-10/12 mx-auto" />
+      <div class="w-full px-8 md:max-w-screen-lg flex justify-between">
+        <div class="flex flex-col font-general text-[18px] gap-7">
+          <p>Links</p>
+          <ul class="flex flex-col gap-4">
+            {
+              links.map((l) => (
+                <li>
+                  <a href={l.url} target={l.external ? "_blank" : "_self"} referrerpolicy="no-referrer">
+                    {l.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="float-right flex flex-col gap-5 self-end">
+          <p class="font-general text-[18px] text-end">Nuestras Redes</p>
+          <ul class="flex gap-4">
+            {
+              redes.map((r) => (
+                <li>
+                  <a class="h-20" href={r.url} target="_blank" referrerpolicy="no-referrer" aria-label={r.name}>
+                    <img src={r.Icon.src} width={48} height={48} alt={r.name} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white w-10/12 mx-auto" />
+      <div class="flex justify-start w-full px-8 md:max-w-screen-lg text-center md:text-left">
+        <p class="font-general text-caption">Manabe @ {new Date().getFullYear()}. All rights reserved</p>
+      </div>
+    </footer>
+
+    <div class="md:hidden h-[50px] bg-white/5 backdrop-blur-lg"></div>
+
+    <script>
+      let alreadyDone = false;
+
+      // Hacer que los números crezcan desde 0 hasta su valor
+      // https://css-tricks.com/animating-number-counters/
+      function animateValue(obj: Element, start: number, end: number, duration: number) {
+        if (alreadyDone) return;
+
+        let startTimestamp: number | null = null;
+        const step = (timestamp: number) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(progress * (end - start) + start).toString() + "+";
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      const metrics = document.querySelectorAll(".metric");
+
+      // Start when the element is in the viewport
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              metrics.forEach((m) => {
+                animateValue(m, 0, parseFloat(m.innerHTML), 2000);
+              });
+              alreadyDone = true;
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      metrics.forEach((m) => observer.observe(m));
+    </script>
+  </body>
+</html>
