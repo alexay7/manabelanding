@@ -44,3 +44,11 @@
   background: var(--primary-color);
   border-radius: 999px;
 }
+
+.botonazul {
+  background:
+    linear-gradient(#101010, #101010) padding-box,
+    linear-gradient(to right, #82cbf02a, #82cbf02a 20%, #82ccf0 40%) border-box;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
